@@ -6,18 +6,12 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.Response;
 
-@Path("/example")
-public class ExampleResource {
-
-    @GET
-    @Produces("application/text")
-    public String getAResource() {
-        return "hello, this is the ExampleResource responding to your GET request.";
-    }
+@Path("/document")
+public class DocumentResource {
 
     @POST
     @Path("{index}")
-    public void saveAResource(@PathParam("index") String index) {
+    public void saveDocument(@PathParam("index") String index) {
         Client client = ClientBuilder.newClient();
 
         String uri = "http://localhost:9200/" + index + "/_doc/3";

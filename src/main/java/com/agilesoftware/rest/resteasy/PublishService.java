@@ -5,16 +5,16 @@ import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
 
-@ApplicationPath("/resteasy-example")
-public class ExampleApplication extends Application {
+@ApplicationPath("/publish-service")
+public class PublishService extends Application {
 
     // -- Have the getSingletons and getClasses methods return empty sets and
     //    the servlet container will scan for classes annotated with Path or Provider
 
 //    private Set<Object> singletons = new HashSet<Object>();
 //
-//    public ExampleApplication() {
-//        singletons.add(new ExampleResource());
+//    public PublishService() {
+//        singletons.add(new DocumentResource());
 //    }
 //
 //    @Override
