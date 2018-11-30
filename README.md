@@ -10,41 +10,38 @@ This service allows an arbitrary JSON document to be stored in a NoSQL datastore
 
 ### How do I get set up? ###
 
+#### Overview ####
+
 Regardless of whether the service was built with Gradle or Maven it can be tested using httpie:
 
 ``` bash
-> http localhost:8080/resteasy-example/example
+> http localhost:8080/publish-service/example
+http localhost:8080/publish-service/health
 
 HTTP/1.1 200 OK
-Content-Length: 66
-Content-Type: application/text
-Date: Fri, 30 Nov 2018 19:35:41 GMT
-Server: Jetty(9.4.14.v20181114)
-
-hello, this is the ExampleResource responding to your GET request.
+Content-Length: 0
+Date: Fri, 30 Nov 2018 19:55:07 GMT
+Server: Jetty(9.2.24.v20180105)
 ```
 
 or curl
 
 ``` sh
-curl -v localhost:8080/resteasy-example/example
-
+> curl -v localhost:8080/publish-service/health
 *   Trying ::1...
 * TCP_NODELAY set
 * Connected to localhost (::1) port 8080 (#0)
-> GET /resteasy-example/example HTTP/1.1
+> GET /publish-service/health HTTP/1.1
 > Host: localhost:8080
 > User-Agent: curl/7.54.0
 > Accept: */*
 >
 < HTTP/1.1 200 OK
-< Date: Fri, 30 Nov 2018 19:36:47 GMT
-< Content-Type: application/text
-< Content-Length: 66
-< Server: Jetty(9.4.14.v20181114)
+< Date: Fri, 30 Nov 2018 19:55:59 GMT
+< Content-Length: 0
+< Server: Jetty(9.2.24.v20180105)
 <
 * Connection #0 to host localhost left intact
-hello, this is the ExampleResource responding to your GET request.
 ```
 
 #### Using Maven ####
@@ -55,22 +52,23 @@ Build and deploy to Jetty using the Jetty plugin:
 mvn jetty:run
 ```
 
+#### Using Gradle ####
 
+Build and deploy to Jetty using the Gretty plugin:
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+``` bash
+./gradlew appRun
+```
 
-### Contribution guidelines ###
+#### Dependencies ####
 
-* Writing tests
-* Code review
-* Other guidelines
+Currently this service is dependent on elasticsearch as its NoSQL data store. It assumes
+elasticsearch is listening on localhost:9200.
 
-### Who do I talk to? ###
+#### How to run tests ####
 
-* Repo owner or admin
-* Other community or team contact
+TBA
+
+#### Deployment instructions ####
+
+TBA
