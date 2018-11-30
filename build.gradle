@@ -1,0 +1,18 @@
+plugins {
+    id 'war'
+    id 'org.gretty' version '2.2.0'
+}
+
+repositories {
+    jcenter()
+}
+
+gretty {
+    contextPath = '/'
+}
+
+dependencies {
+    compile 'org.jboss.resteasy:resteasy-jaxrs:3.6.2.Final'
+    compile 'org.jboss.resteasy:resteasy-client:3.6.2.Final'
+    compile 'org.jboss.resteasy:resteasy-servlet-initializer:3.6.2.Final'
+}

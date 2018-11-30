@@ -12,7 +12,7 @@ public class ExampleResource {
     @GET
     @Produces("application/text")
     public String getAResource() {
-        return "hello";
+        return "hello, this is the ExampleResource responding to your GET request.";
     }
 
     @POST
@@ -27,7 +27,11 @@ public class ExampleResource {
                 "    \"post_date\" : \"2018-11-15T14:12:12\",\n" +
                 "    \"message\" : \"trying out Elasticsearch from resteasy\"\n" +
                 "}"));
-        if (response.getStatus() != 201) {
+
+        response.close();
+        client.close();
+
+        if (response.getStatus() != Response.Status.CREATED.getStatusCode()) {
             throw new RuntimeException("could not create resource");
         }
     }
