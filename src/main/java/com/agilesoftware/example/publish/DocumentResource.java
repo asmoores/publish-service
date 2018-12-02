@@ -1,6 +1,6 @@
-package com.agilesoftware.rest.resteasy;
+package com.agilesoftware.example.publish;
 
-import com.agilesoftware.rest.resteasy.utils.ResponsePrinter;
+import com.agilesoftware.example.publish.utils.ResponsePrinter;
 import org.apache.commons.lang.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

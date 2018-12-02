@@ -1,4 +1,4 @@
-package com.agilesoftware.rest.resteasy;
+package com.agilesoftware.example.publish;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

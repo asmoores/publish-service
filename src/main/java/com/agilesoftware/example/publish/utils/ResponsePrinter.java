@@ -1,4 +1,4 @@
-package com.agilesoftware.rest.resteasy.utils;
+package com.agilesoftware.example.publish.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
