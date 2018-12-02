@@ -4,14 +4,15 @@
 The Publish Service is a RESTful application implemented with RESTeasy.
 It can be built and deployed with either maven or gradle.
 
-### A service to allow CRUD on arbitrary JSON documents. ###
+Note.  Currently includes a GET endpoint to retrieve documents for testing purposes.
+
+## A service to publish arbitrary JSON documents. ##
 
 This service allows an arbitrary JSON document to be stored in a NoSQL datastore.
 
+## How do I get set up? ##
 
-### How do I get set up? ###
-
-#### Overview ####
+### Overview ###
 
 Regardless of whether the service was built with Gradle or Maven it can be tested using httpie:
 
@@ -44,7 +45,7 @@ or curl
 * Connection #0 to host localhost left intact
 ```
 
-#### Using Maven ####
+### Using Maven ###
 
 Build and deploy to Jetty using the Jetty plugin:
 
@@ -52,7 +53,7 @@ Build and deploy to Jetty using the Jetty plugin:
 mvn jetty:run
 ```
 
-#### Using Gradle ####
+### Using Gradle ###
 
 Build and deploy to Jetty using the Gretty plugin:
 
@@ -60,15 +61,15 @@ Build and deploy to Jetty using the Gretty plugin:
 ./gradlew appRun
 ```
 
-#### Dependencies ####
+### Dependencies ###
 
 Currently this service is dependent on elasticsearch as its NoSQL data store. It assumes
 elasticsearch is listening on localhost:9200.
 
-#### How to run tests ####
+### How to run tests ###
 
 TBA
 
-#### Deployment instructions ####
+### Deployment instructions ###
 
 TBA
