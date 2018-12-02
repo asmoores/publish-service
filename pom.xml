@@ -5,10 +5,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.agile-software.rest</groupId>
-    <artifactId>resteasy-example</artifactId>
+    <artifactId>publish-service</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
-    <name>RESTeasy Example</name>
+    <name>Publish Service</name>
     <description/>
 
     <properties>
@@ -64,7 +64,7 @@
     </dependencies>
 
     <build>
-        <finalName>resteasy-example</finalName>
+        <finalName>publish-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
