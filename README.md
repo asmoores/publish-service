@@ -16,8 +16,7 @@ This service allows an arbitrary JSON document to be stored in a NoSQL datastore
 Regardless of whether the service was built with Gradle or Maven it can be tested using httpie:
 
 ``` bash
-> http localhost:8080/publish-service/example
-http localhost:8080/publish-service/health
+> http localhost:8080/publish-service/health
 
 HTTP/1.1 200 OK
 Content-Length: 0
