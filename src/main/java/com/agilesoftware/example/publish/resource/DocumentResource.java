@@ -1,4 +1,4 @@
-package com.agilesoftware.example.publish;
+package com.agilesoftware.example.publish.resource;
 
 import com.agilesoftware.example.publish.utils.ResponsePrinter;
 import org.apache.commons.lang.ObjectUtils;

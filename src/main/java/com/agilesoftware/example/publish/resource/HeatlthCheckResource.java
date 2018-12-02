@@ -1,4 +1,4 @@
-package com.agilesoftware.example.publish;
+package com.agilesoftware.example.publish.resource;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
