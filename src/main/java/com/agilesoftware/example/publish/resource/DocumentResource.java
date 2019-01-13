@@ -1,7 +1,9 @@
-package com.agilesoftware.example.publish.resource;
+package com.agilesoftware.rest.resteasy;
 
-import com.agilesoftware.example.publish.utils.ResponsePrinter;
-import org.apache.commons.lang.ObjectUtils;
+import com.agilesoftware.rest.resteasy.utils.Logged;
+import com.agilesoftware.rest.resteasy.utils.ResponsePrinter;
+import org.jboss.resteasy.annotations.ContentEncoding;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,6 +11,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/document")
@@ -17,6 +20,8 @@ public class DocumentResource {
 
     @GET
     @Path("{docId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Logged
     public Response get(@PathParam("docId") String id) {
         log.debug("Handling a docment GET request for document id {}", id);
         Client client = ClientBuilder.newClient();
@@ -25,16 +30,8 @@ public class DocumentResource {
         Response responseFromNoSQLStore = null;
         try {
             responseFromNoSQLStore = client.target(uri).request().get();
-
-            ResponsePrinter.logResponseDetails(responseFromNoSQLStore);
-            log.debug("Call to NoSQL data store returned {}", responseFromNoSQLStore);
-
-            // Take a copy of the entity from the response before the finally clause closes the response.
-            // The return value is constructed after the finally clause is executed.  Can't build the response and store
-            // it in a local variable as the ResponseBuilder uses a reference as well.
-            Object entity = ObjectUtils.clone(responseFromNoSQLStore.getEntity());
-
-            return Response.status(Response.Status.OK).entity(entity).build();
+            String responseBodyAsString = ResponsePrinter.logResponseDetails(responseFromNoSQLStore);
+            return Response.status(Response.Status.OK).entity(responseBodyAsString).build();
         } finally {
             try {
                 log.debug("Closing resources...");

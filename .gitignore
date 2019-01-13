@@ -6,3 +6,7 @@ gen
 .idea/
 spring-boot.iml
 target/
+/logs/
+.gradle
+gradle
+build
