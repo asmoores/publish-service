@@ -1,7 +1,7 @@
-package com.agilesoftware.rest.resteasy;
+package com.agilesoftware.example.publish.resource;
 
+import com.agilesoftware.example.publish.utils.ResponsePrinter;
 import com.agilesoftware.rest.resteasy.utils.Logged;
-import com.agilesoftware.rest.resteasy.utils.ResponsePrinter;
 import org.jboss.resteasy.annotations.ContentEncoding;
 import org.json.JSONObject;
 import org.slf4j.Logger;
