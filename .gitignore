@@ -8,5 +8,4 @@ spring-boot.iml
 target/
 /logs/
 .gradle
-gradle
 build
