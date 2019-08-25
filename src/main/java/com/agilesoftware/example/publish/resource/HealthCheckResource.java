@@ -6,7 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 @Path("/health")
-public class HeatlthCheckResource {
+public class HealthCheckResource {
     @GET
     @Produces("application/text")
     public Response health() {
