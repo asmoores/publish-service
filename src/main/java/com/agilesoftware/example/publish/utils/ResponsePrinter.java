@@ -11,7 +11,7 @@ public class ResponsePrinter {
 
     public static String logResponseDetails(Response response) {
         String responseBodyAsString = response.readEntity(String.class);
-        log.debug("Reponse is: \n{}-{} \n{} \n{} bytes \n{} \n{} chars long",
+        log.debug("Response is: \n{}-{} \n{} \n{} bytes \n{} \n{} chars long",
                 response.getStatus(),
                 response.getStatusInfo(),
                 response.getMediaType(),
