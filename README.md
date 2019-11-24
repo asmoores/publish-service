@@ -11,7 +11,35 @@ Note.  Currently includes a GET endpoint to retrieve documents for testing purpo
 This service allows an arbitrary JSON document to be stored in a NoSQL datastore.
 
 ## How do I get set up? ##
-
+### Install elasticsearch 
+Use brew on the mac
+```
+brew tap elastic/tap
+brew install elastic/tap/elasticsearch-full
+brew install elastic/tap/kibana-full
+```
+If you are running a version of java later than 8 then there is a bug in elasticsearch config.  Change the `jvm.options` file
+as follows, the full path to `gc.log` is required:
+```
+# JDK 9+ GC logging
+9-:-Xlog:gc*,gc+age=trace,safepoint:file=/usr/local/var/log/elasticsearch/gc.log:utctime,pid,tags:filecount=32,filesize=64m
+```
+Start elastic:
+```
+brew services start elastic/tap/elasticsearch-full
+```
+Confirm its running:
+``` bash
+curl -X GET http://127.0.0.1:9200
+```
+Start kibana:
+```bash
+brew services start kibana-full
+```
+Check its running in a browser:
+```
+http://127.0.0.1:5601/
+```
 ### Overview ###
 
 Regardless of whether the service was built with Gradle or Maven it can be tested using httpie:
